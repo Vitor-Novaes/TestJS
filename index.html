@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 		<link rel="stylesheet" type="text/css" href="css/animationJS.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 
 	</head>
 	<body>
@@ -76,8 +77,34 @@
 						</tr>
 					</tbody>
 				</table>
+				</section>
 
-			</section>
+
+				<div class="container-fluid"> 
+				<form id="form_paciente">
+					<div id="form-join">
+					    <div class="form-group col-md-6">
+					      <label for="paciente">Nome do paciente</label>
+					      <input type="name" class="form-control" id="paciente" name="nome" placeholder="Nome Completo">
+					  	</div>
+						<div class="form-group col-md-4">
+						    <label for="massa">Massa corpórea</label>
+						    <input type="text" class="form-control" id="massa" name="peso" placeholder="Informe a massa corporal em KG"> 
+						</div>
+						<div class="form-group col-md-4">
+						    <label for="altura">Altura</label>
+						    <input type="text" class="form-control" id="altura" name="altura" placeholder="Informe a altura em metros">
+						</div>
+						<div class="form-group col-md-4">
+						    <label for="fat">% de Gordura</label>
+						    <input type="text" class="form-control" id="fat" name="gordura" placeholder="Informe a porcentagem de gordura">
+						</div>
+						<div id="buttom">
+					  		<button type="submit" class="btn btn-dark">Registrar</button>
+						</div>
+					</div>
+				</form>
+				</div>
 		</main>
 
 	<script src="js/application.js"></script>
