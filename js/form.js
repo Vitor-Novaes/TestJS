@@ -7,13 +7,24 @@ btn.addEventListener("click", function (event) {
 		var form = document.querySelector("#form_paciente");
 		var paciente = date_form(form);
 
+
 	// criou a partir dos dados informados :
 		var pacienteNew = create_tr(paciente);
+	
+	// Validate
+		if(validatePaciente(paciente)){
+			var tabela = document.querySelector("#tabela-pacientes");
+			tabela.appendChild(pacienteNew);
 
-		var tabela = document.querySelector("#tabela-pacientes");
-		tabela.appendChild(pacienteNew);
+			form.reset();
+		}else{
+			var erro = document.querySelector("#erro-form");
+			erro.classList.add(".alert alert-danger");
+			erro.textContent = "peso ou altura invalida"
+			return;
+		}
+		
 
-		form.reset();
 });
 
 
@@ -47,4 +58,13 @@ function create_td(valor, classe){
 	td.classList.add(classe);
 
 	return td;
+}
+
+function validatePaciente(paciente){
+	if(validatePeso(paciente.peso) && validateAltura(paciente.altura)){
+		return true;
+	}else{
+		return false;
+	}
+
 }
