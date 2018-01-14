@@ -26,8 +26,7 @@ for(i = 0; i < paciente.length; i++){
 	} 
 
 	if(alturaValida && pesoValido){
-		var imc_calculo = (peso.textContent / (altura.textContent * altura.textContent));
-		imc.textContent = imc_calculo.toFixed(2);
+		imc.textContent  = imcC(peso,altura);
 		
 		// if(imc_calculo < 18.55){
 		// 	status.textContent = "Abaixo do peso";
@@ -65,45 +64,8 @@ for(i = 0; i < paciente.length; i++){
 	});
 }
 
-var btn = document.querySelector("#buttom");
-btn.addEventListener("click", function (event) {
-	event.preventDefault();
-	alert("botão clickado com sucesso");
-
-	// pegou os dados no form :
-		var form = document.querySelector("#form_paciente");
-		var nome = form.nome.value;
-		var peso = form.peso.value;
-		var altura = form.altura.value;
-		var gordura = form.gordura.value;
-
-	// criou a partir dos dados informados :
-		var pacienteNew = document.createElement("tr");
-
-		var nomeTd = document.createElement("td");
-		var pesoTd = document.createElement("td");
-		var alturaTd = document.createElement("td");
-		var gorduraTd = document.createElement("td");
-		// var imcTd = document.createElement("td");
-
-		nomeTd.textContent = nome;
-		pesoTd.textContent = peso;
-		alturaTd.textContent = altura;
-		gorduraTd.textContent = gordura;
-
-		pacienteNew.appendChild(nomeTd);
-		pacienteNew.appendChild(pesoTd);
-		pacienteNew.appendChild(alturaTd);
-		pacienteNew.appendChild(gorduraTd);
-
-		var tabela = document.querySelector("#tabela-pacientes");
-		tabela.appendChild(pacienteNew);
-
-});
-
-// Criar uma função
-// function nome_da_função (){
-
-// }
-
-
+function imcC(peso,altura){
+	var imc = 0;
+	imc = peso.textContent / (altura.textContent * altura.textContent);
+	return imc.toFixed(2);
+}
