@@ -149,3 +149,25 @@ button[disabled=disabled], button:disabled {
 #buttom{
 	margin-left: 10px;
 }
+
+
+/* Animation for JavaScript Project*/
+.paciente-erro{
+	color: black;
+	background-color: rgba(255,0,0,0.5);
+}
+
+.erro{
+	color: red;
+	text-align: right;
+	text-shadow: rgb(0,0,0);
+}
+
+.fadeout{
+	opacity: 0;
+	transition: 0.5s;
+}
+
+.filtro-style{
+	display: none;
+}

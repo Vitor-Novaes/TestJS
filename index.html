@@ -6,7 +6,6 @@
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
-		<link rel="stylesheet" type="text/css" href="css/animationJS.css">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 
 	</head>
@@ -20,6 +19,12 @@
 		<main>
 			<section class="container">
 				<h2>Meus pacientes</h2>
+				
+				<div class="form-group col-md-4">
+				    <label>Filtro de pacientes</label>
+				    <input type="text" class="form-control" id="filter" name="filtro" placeholder="Informe o nome do paciente"> 
+				</div>
+
 				<table>
 					<thead>
 						<tr>
@@ -82,7 +87,7 @@
 
 				<div class="container-fluid"> 
 				<form id="form_paciente">
-				<div id="erro-form" role="alert"></div>	
+				<span id="erro-form" role="alert"></span>	
 					<div id="form-join">
 					    <div class="form-group col-md-6">
 					      <label for="paciente">Nome do paciente</label>
@@ -108,8 +113,10 @@
 				</div>
 		</main>
 
-	<script src="js/application.js"></script>
-	<script src="js/form.js"></script>
+	<script type="text/javascript" src="js/application.js"></script>
+	<script type="text/javascript" src="js/form.js"></script>
+	<script type="text/javascript" src="js/remove.js"></script>
+	<script type="text/javascript" src="js/filter.js"></script>
 
 	</body>
 </html>

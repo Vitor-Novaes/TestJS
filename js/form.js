@@ -1,7 +1,6 @@
 var btn = document.querySelector("#buttom");
 btn.addEventListener("click", function (event) {
 	event.preventDefault();
-	alert("botão clickado com sucesso");
 
 	// pegou os dados no form :
 		var form = document.querySelector("#form_paciente");
@@ -19,11 +18,13 @@ btn.addEventListener("click", function (event) {
 			form.reset();
 		}else{
 			var erro = document.querySelector("#erro-form");
-			erro.classList.add(".alert alert-danger");
 			erro.textContent = "peso ou altura invalida"
-			return;
+			erro.classList.add(".erro");
+			
+			setTimeout(function(){
+				erro.innerHTML = "";
+			},10000);
 		}
-		
 
 });
 
