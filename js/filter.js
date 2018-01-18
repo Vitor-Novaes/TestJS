@@ -8,8 +8,8 @@ filter.addEventListener('input', function(){
 		pacientes.forEach(function(paciente){
 			var tdNome = paciente.querySelector(".info-nome");
 			var nome = tdNome.textContent;
-
-			if(this.value != nome){
+			var exp = new RegExp(this.value, "i")
+			if(!exp.test(nome)){
 				paciente.classList.add("filtro-style");
 			}else{
 				paciente.classList.remove("filtro-style");
