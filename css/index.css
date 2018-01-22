@@ -170,4 +170,5 @@ button[disabled=disabled], button:disabled {
 
 .filtro-style{
 	display: none;
+	color: red;
 }

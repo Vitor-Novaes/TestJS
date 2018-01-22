@@ -4,30 +4,32 @@ btn.addEventListener("click", function (event) {
 
 	// pegou os dados no form :
 		var form = document.querySelector("#form_paciente");
-		var paciente = date_form(form);
+		var paciente = date_form(form); // retorna um objeto;
 
 
-	// criou a partir dos dados informados :
-		var pacienteNew = create_tr(paciente);
-	
-	// Validate
 		if(validatePaciente(paciente)){
-			var tabela = document.querySelector("#tabela-pacientes");
-			tabela.appendChild(pacienteNew);
-
+			add_all_pacientes(paciente);
 			form.reset();
 		}else{
 			var erro = document.querySelector("#erro-form");
 			erro.textContent = "peso ou altura invalida"
 			erro.classList.add(".erro");
-			
+
 			setTimeout(function(){
 				erro.innerHTML = "";
 			},10000);
 		}
-
 });
 
+function add_all_pacientes(paciente) {
+
+	// criou a partir dos dados informados :
+		var pacienteNew = create_tr(paciente);
+
+		var tabela = document.querySelector("#tabela-pacientes");
+		tabela.appendChild(pacienteNew);
+
+}
 
 function date_form(form){
 	var paciente = {
@@ -36,7 +38,7 @@ function date_form(form){
 		altura : form.altura.value,
 		gordura : form.gordura.value,
 		imc : imcC(peso,altura)
-	}	
+	}
 	return paciente;
 }
 
